@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './slide/counterSlide'
-import 'antd/dist/reset.css'
+import { decrement, increment } from './redux/slide/counterSlide'
 
-export default function App() {
+function App() {
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
@@ -27,3 +26,4 @@ export default function App() {
     </div>
   )
 }
+export default App;
