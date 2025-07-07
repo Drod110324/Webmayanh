@@ -9,10 +9,10 @@ function App() {
     <HeaderComponent />
     <BrowserRouter>
       <Routes>
-      {routes.map((route) => {
-        const Page = route.page
-        return <Route path={route.path} element={<Page />} key={route.path} />
-      })}
+        {routes.map((route) => {
+          const Page = route.page
+          return <Route path={route.path} element={<Page />} key={route.path} />
+        })}
       </Routes>
     </BrowserRouter>
   </div>
