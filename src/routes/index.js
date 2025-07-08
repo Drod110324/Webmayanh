@@ -1,7 +1,7 @@
-import Homepage from '../pages/Homepage/Homepage.jsx'
-import OrderPage from '../pages/OrderPage/OrderPage.jsx'
-import ProductPage from '../pages/Productspage/ProductPage.jsx'
-import NotFoundPage from '../pages/NotFoundPage/NotFoundPage.jsx'
+import Homepage from '../pages/Homepage/Homepage'
+import OrderPage from '../pages/OrderPage/OrderPage'
+import ProductPage from '../pages/Productspage/ProductPage'
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage'
 import { Fragment } from 'react'
 
 export const routes = [

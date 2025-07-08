@@ -1,18 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { routes } from './routes'
-import HeaderComponent from './components/HeaderComponent/HeaderComponent'
+import DefaultComponent from './components/DefaultComponent/DefaultComponent.jsx'
+import { Fragment } from 'react/jsx-runtime'
 
 function App() {
   return(
   <div>
-    <HeaderComponent />
     <BrowserRouter>
       <Routes>
         {routes.map((route) => {
           const Page = route.page
-          return <Route path={route.path} element={<Page />} key={route.path} />
-        })}
+          const Default = route.isShowHeader ? DefaultComponent : Fragment
+          return <Route path={route.path} element={<Default><Page /></Default>} key={route.path} />
+        })} 
       </Routes>
     </BrowserRouter>
   </div>
