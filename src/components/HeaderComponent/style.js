@@ -3,8 +3,9 @@ import { Row } from "antd";
 
 export const WrapperHeader = styled(Row)`
   width: 100%;
-  padding: 10px 120px;
-  background-color: #27408B;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
   gap: 16px;
   flex-wrap: nowrap;
 `

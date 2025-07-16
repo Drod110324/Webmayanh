@@ -6,7 +6,7 @@ const SliderComponent = ({arrImage}) => {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 200,
+        speed: 100,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,

@@ -6,15 +6,24 @@ import ButtonComponent from '../ButtonComponent/ButtonComponent'
 const ButtonInputSearch = (props) => {
     const { placeholder, size, textButton, bordered, colorButton, border, ...rest } = props
     return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 0, padding: '5px' }}>
+        <div style={{
+            display: 'flex',
+            gap: 0,
+            padding: '5px',
+            width: '100%',        // chiếm hết chiều ngang cha
+            maxWidth: 500,        // hoặc giá trị bạn muốn, ví dụ 100% hoặc 500px
+            boxSizing: 'border-box'
+        }}>
             <InputComponent
-                placeholder={placeholder}
+
                 size={size}
+                placeholder={placeholder}
                 style={{
-                    width: '750px',
+                    flex: 1, // input chiếm hết phần còn lại
+                    minWidth: 450, // không nhỏ hơn 120px
                     borderTopRightRadius: 0,
                     borderBottomRightRadius: 0,
-                    borderRight: 'none'
+                    borderRight: 'none',
                 }}
                 {...rest}
             />
@@ -23,7 +32,8 @@ const ButtonInputSearch = (props) => {
                 icon={<SearchOutlined />}    
                 bordered={bordered}
                 style={{
-                    backgroundColor: '#2e86c1 ',
+                    minWidth: 40, // không nhỏ hơn 40px
+                    backgroundColor: '#2e86c1',
                     color: '#fff',
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,

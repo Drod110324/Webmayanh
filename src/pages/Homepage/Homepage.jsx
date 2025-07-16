@@ -11,18 +11,20 @@ const Homepage = () => {
   const arr = ['máy ảnh', 'ống kính', 'phụ kiện', 'gimbal','máy quay']
   return (
     <>
-    <div style={{padding: '0px 120px'}}>
       <WrapperTypeProduct>
         {arr.map((item) => {
           return( <TypeProduct name={item} key={item}  />
           )
         })}
       </WrapperTypeProduct>
-      <div id="container" style={{backgroundColor: '#F5F5F5', padding: '0px 120px'}}>
-      <SliderComponent arrImage={[Slider1, Slider2, Slider4, Slider5]}/>
+      <div style={{backgroundColor: '#F5F5F5', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)'}}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <SliderComponent arrImage={[Slider1, Slider2, Slider4, Slider5]}/>
+        </div>
       </div>
-      Homepage
-    </div>
+      <div>
+        Homepage
+      </div>
     </>
   ) 
 }
