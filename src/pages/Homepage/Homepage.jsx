@@ -6,6 +6,9 @@ import Slider1 from '../../assets/images/Slider1.jpg'
 import Slider2 from '../../assets/images/Slider2.jpg'
 import Slider4 from '../../assets/images/Slider4.png'
 import Slider5 from '../../assets/images/Slider5.png'
+import CardComponent from '../../components/CardComponent/CardComponent.jsx'
+import HeaderComponent from '../../components/HeaderComponent/HeaderComponent.jsx'
+import NavBarComponent from '../../components/NavBarComponent/NavBarComponent.jsx'
 
 const Homepage = () => {
   const arr = ['máy ảnh', 'ống kính', 'phụ kiện', 'gimbal','máy quay']
@@ -22,11 +25,14 @@ const Homepage = () => {
           <SliderComponent arrImage={[Slider1, Slider2, Slider4, Slider5]}/>
         </div>
       </div>
-      <div>
-        Homepage
-      </div>
+        <div style={{marginTop: '20px', display: 'flex', gap: '20px', alignItems: 'center'}}>
+          <CardComponent />
+        </div>
+        <NavBarComponent />
+
+        
     </>
-  ) 
+  )   
 }
 
 export default Homepage

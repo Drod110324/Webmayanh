@@ -33,7 +33,7 @@ const ButtonInputSearch = (props) => {
                 bordered={bordered}
                 style={{
                     minWidth: 40, // không nhỏ hơn 40px
-                    backgroundColor: '#2e86c1',
+                    backgroundColor: '#0a5d87',
                     color: '#fff',
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,

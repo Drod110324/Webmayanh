@@ -5,15 +5,16 @@ import { WrapperHeader, WrapperHeaderLogo, WrapperHeaderAccount, WrapperTextHead
 import { UserOutlined, CaretDownOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch'
 import { SearchOutlined } from '@ant-design/icons'
+import Logo from '../../assets/images/Logo.webp'
 
 const HeaderComponent = () => {
   const isLogin = localStorage.getItem('isLogin') === 'true';
   return (
-    <div style={{ backgroundColor: '#27408B', width: '100%' }}>
+    <div style={{ backgroundColor: '   #3689b3 ', width: '100%' }}>
       <WrapperHeader>
         <Col span={6} style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <WrapperHeaderLogo style={{ fontSize: '24px', fontWeight: 'bold', paddingLeft: '10px' }}>MáyẢnh360</WrapperHeaderLogo>
+            <img src={Logo} alt="Logo" style={{ height: '70px', paddingLeft: '10px', objectFit: 'contain' }} />
           </Link>
         </Col>
         <Col span={12} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -25,7 +26,8 @@ const HeaderComponent = () => {
           />
         </Col>
         <Col span={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
-          {/* Đăng nhập/Đăng ký hoặc Tài khoản */}
+        
+          {/* Đăng nhập/Đăng*/}
           {!isLogin && (
             <Link to="/signin" style={{ textDecoration: 'none' }}>
               <WrapperHeaderAccount>
