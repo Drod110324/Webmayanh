@@ -16,3 +16,11 @@ export const WrapperContent = styled.div`
     flex-direction: column;
     gap: 12px;
 `;
+
+export const WrapperTextPrice = styled.div`
+    padding: 4px;
+    color: rgb(56, 56, 61);
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    width: fit-content;
+`;

@@ -9,6 +9,7 @@ import Slider5 from '../../assets/images/Slider5.png'
 import CardComponent from '../../components/CardComponent/CardComponent.jsx'
 import HeaderComponent from '../../components/HeaderComponent/HeaderComponent.jsx'
 import NavBarComponent from '../../components/NavBarComponent/NavBarComponent.jsx'
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent.jsx'
 
 const Homepage = () => {
   const arr = ['máy ảnh', 'ống kính', 'phụ kiện', 'gimbal','máy quay']
@@ -28,7 +29,13 @@ const Homepage = () => {
         <div style={{marginTop: '20px', display: 'flex', gap: '20px', alignItems: 'center'}}>
           <CardComponent />
         </div>
-        <NavBarComponent />
+        <ButtonComponent textButton='Xem thêm' type='outline' styleButton={{
+          border: '1px solid rgb(11, 116, 229)',
+           color: 'rgb(11, 116, 229)', 
+           width: '240px', 
+           height: '38px', 
+           borderRadius: '4px'
+          }} />
 
         
     </>
