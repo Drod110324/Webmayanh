@@ -1,7 +1,12 @@
 import React from 'react'
 import { WrapperContent, WrapperLabelText, WrapperTextValue } from './style'
+import { Checkbox } from 'antd'
+import { Rate } from 'antd'
 
 const NavBarComponent = () => {
+  const onChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+  };
   const renderContent = (type, options) => {
     switch (type) {
       case 'text':
@@ -10,6 +15,28 @@ const NavBarComponent = () => {
                 <WrapperTextValue> {option}</WrapperTextValue>
                 ) 
         })
+      case 'checkbox':
+        return (    
+            <Checkbox.Group style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '10px' }} onChange={onChange}>
+                {options.map((option) => {
+                    return( 
+                        <Checkbox style={{marginleft: '0px'}} value={option.value}>{option.label}</Checkbox>
+                    )
+                })}
+            </Checkbox.Group>
+            
+        )
+      case 'star':
+        return options.map((option) => {
+          console.log('check', option)
+            return (
+              <>
+                <Rate style={{fontSize: '12px'}} disabled defaultValue={option} />
+                <span>{`Từ ${option} sao`}</span>
+              </>
+            )
+          })
+          
       default:
         return null
     }
@@ -21,6 +48,16 @@ const NavBarComponent = () => {
       </WrapperLabelText>
       <WrapperContent>
         {renderContent('text', ['Camera', 'Lens', 'Phu Kien', 'Gimbal'])}
+        
+          <WrapperContent>
+            {renderContent('checkbox', [
+            {value: 'a', label: 'A'},
+            {value: 'b', label: 'B'},
+          ])}
+          </WrapperContent>
+          <WrapperContent>
+            {renderContent('star', ['1', '2', '3', '4', '5'])}
+          </WrapperContent>
       </WrapperContent>
     </div>
   )
