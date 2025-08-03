@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Col } from 'antd'
+import { Col, Badge } from 'antd'
 import { WrapperHeader, WrapperHeaderLogo, WrapperHeaderAccount, WrapperTextHeader } from './style'
 import { UserOutlined, CaretDownOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch'
@@ -45,10 +45,14 @@ const HeaderComponent = () => {
             </div>
           )}
           {/* Giỏ hàng */}
+          
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <Badge count={4} size="small">
             <ShoppingCartOutlined style={{ fontSize: '24px', color: '#fff' }} />
+            </Badge>
             <WrapperTextHeader>Giỏ hàng</WrapperTextHeader>
           </div>
+          
         </Col>
       </WrapperHeader>
     </div>

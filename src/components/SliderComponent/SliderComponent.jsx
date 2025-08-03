@@ -14,7 +14,13 @@ const SliderComponent = ({arrImage}) => {
         pauseOnHover: true,
       };
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      width: '100%',
+      backgroundColor: '#fff'
+    }}>
       <Slider style={{ width: '80%' }} {...settings}>
           {arrImage.map((image) => {
               return (

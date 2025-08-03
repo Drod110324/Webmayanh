@@ -4,7 +4,9 @@ import ProductPage from '../pages/Productspage/ProductPage'
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage'
 import SignupPage from '../pages/SignupPage/SignupPage'
 import SigninPage from '../pages/SigninPage/SigninPage'
-    
+import TypeProductPage from '../pages/TypeProductPage/TypeProductPage'
+import ProductDetailsPage from '../pages/ProductDetailsPage/ProductDetailsPage'
+
 export const routes = [
     {
         path: '/',
@@ -22,6 +24,11 @@ export const routes = [
         isShowHeader: true
     },
     {
+        path: '/:type',
+        page: TypeProductPage,
+        isShowHeader: true
+    },
+    {
         path: '*',
         page: NotFoundPage,
         isShowHeader: false
@@ -36,7 +43,11 @@ export const routes = [
         path: '/signin',
         page: SigninPage,
         isShowHeader: false
+    },
+    {
+        path: '/product-details',
+        page: ProductDetailsPage,
+        isShowHeader: true
     }
-    
 
 ]

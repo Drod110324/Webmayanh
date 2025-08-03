@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 
 export const WrapperTypeProduct = styled.div`
   display: flex;
@@ -21,3 +22,26 @@ export const WrapperTypeProduct = styled.div`
   padding-left: 24px;
   padding-right: 24px;
 `;
+
+export const WrapperButtonMore = styled(ButtonComponent)`
+  &:hover{
+    color: #fff;
+    background-color: #0b74e5;
+    span{
+      color: #fff;
+    }
+  }
+    width: 100%;
+    text-align: center;
+`;
+
+export const WrapperProduct = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap:15px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+`
