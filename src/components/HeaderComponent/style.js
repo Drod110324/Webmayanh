@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Badge } from "antd";
+import { Row } from "antd";
 
 export const WrapperHeader = styled.div`
   width: 100%;

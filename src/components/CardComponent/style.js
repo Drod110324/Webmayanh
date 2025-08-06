@@ -33,3 +33,8 @@ export const WrapperContent = styled.div`
     padding: 12px;
     background: #fff;
 `;
+export const WrapperStyledTextSell = styled.span`
+    font-size: 15px;
+    line-height: 24px;
+    color: rgb(120, 120, 120)
+`
