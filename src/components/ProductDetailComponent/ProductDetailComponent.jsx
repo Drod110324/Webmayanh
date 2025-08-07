@@ -10,7 +10,7 @@ const ProductDetailComponent = () => {
     console.log('changed', value);
   };
   return (
-    <Row style={{height: '100%', padding: `0 16px`}}>
+    <Row style={{height: '100%', padding: `10px 16px`}}>
        <Col span={10} style={{borderRight: '1px solid rgb(235, 237, 240)', paddingRight: '8px', borderRadius: '8px'}}>
        <Image src={Fujifilm} alt="image product" preview={false} />
        <Row style={{paddingTop: '10px', justifyContent: 'space-between'}}>
@@ -21,6 +21,10 @@ const ProductDetailComponent = () => {
         <WrapperStyleSmallImage src={fujsmall} alt="image small" preview={false} style={{width: '60px', height: '60px', objectFit: 'cover'}} />
         </WrapperStyleColImage>
         <WrapperStyleColImage span={4}>
+        <WrapperStyleSmallImage src={fujsmall} alt="image small" preview={false} style={{width: '60px', height: '60px', objectFit: 'cover'}} />
+        </WrapperStyleColImage><WrapperStyleColImage span={4}>
+        <WrapperStyleSmallImage src={fujsmall} alt="image small" preview={false} style={{width: '60px', height: '60px', objectFit: 'cover'}} />
+        </WrapperStyleColImage><WrapperStyleColImage span={4}>
         <WrapperStyleSmallImage src={fujsmall} alt="image small" preview={false} style={{width: '60px', height: '60px', objectFit: 'cover'}} />
         </WrapperStyleColImage>
        </Row>
