@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Col, Badge } from 'antd'
+import { Col, Badge, Card } from 'antd'
 import { WrapperHeader, WrapperHeaderLogo, WrapperHeaderAccount, WrapperTextHeader } from './style'
 import { UserOutlined, CaretDownOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch'
@@ -10,14 +10,23 @@ import Logo from '../../assets/images/Logo.webp'
 const HeaderComponent = () => {
   const isLogin = localStorage.getItem('isLogin') === 'true';
   return (
-    <div style={{ backgroundColor: '   #3689b3 ', width: '100%' }}>
+    <Card 
+      style={{ 
+        width: '100%', 
+        backgroundColor: 'rgb(26, 148, 255)', 
+        border: 'none',
+        borderRadius: '0',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+      }}
+      bodyStyle={{ padding: '5px 20px' }}
+    >
       <WrapperHeader>
-        <Col span={6} style={{ display: 'flex', alignItems: 'center' }}>
+        <Col span={4} style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <img src={Logo} alt="Logo" style={{ height: '70px', paddingLeft: '10px', objectFit: 'contain' }} />
+            <img src={Logo} alt="Logo" style={{ height: '70px', paddingLeft: '5px', objectFit: 'contain' }} />
           </Link>
         </Col>
-        <Col span={12} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <Col span={14} style={{ width: '100%', display: 'flex', justifyContent: 'flex-start', paddingLeft: '10px' }}>
           <ButtonInputSearch
             placeholder="Tìm kiếm"
             size="large"
@@ -25,13 +34,13 @@ const HeaderComponent = () => {
             textButton="Tìm kiếm"
           />
         </Col>
-        <Col span={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
+        <Col span={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '20px' }}>
         
-          {/* Đăng nhập/Đăng*/}
+          {/* Đăng nhập/Đăng ký */}
           {!isLogin && (
             <Link to="/signin" style={{ textDecoration: 'none' }}>
               <WrapperHeaderAccount>
-                <UserOutlined style={{ fontSize: '24px', color: '#fff' }} />
+                <UserOutlined style={{ fontSize: '30px', color: '#fff' }} />
                 <div>
                   <WrapperTextHeader>Đăng nhập/Đăngký</WrapperTextHeader>
                 </div>
@@ -45,17 +54,17 @@ const HeaderComponent = () => {
             </div>
           )}
           {/* Giỏ hàng */}
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <Link to="/orders" style={{ textDecoration: 'none' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
             <Badge count={4} size="small">
-            <ShoppingCartOutlined style={{ fontSize: '24px', color: '#fff' }} />
+            <ShoppingCartOutlined style={{ fontSize: '30px', color: '#fff' }} />
             </Badge>
             <WrapperTextHeader>Giỏ hàng</WrapperTextHeader>
           </div>
-          
+          </Link>
         </Col>
       </WrapperHeader>
-    </div>
+    </Card>
   )
 }
 

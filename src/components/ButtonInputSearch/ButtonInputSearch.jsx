@@ -11,7 +11,7 @@ const ButtonInputSearch = (props) => {
             gap: 0,
             padding: '5px',
             width: '100%',        // chiếm hết chiều ngang cha
-            maxWidth: 500,        // hoặc giá trị bạn muốn, ví dụ 100% hoặc 500px
+            maxWidth: 650,        // tăng từ 550 lên 650
             boxSizing: 'border-box'
         }}>
             <InputComponent
@@ -20,7 +20,7 @@ const ButtonInputSearch = (props) => {
                 placeholder={placeholder}
                 style={{
                     flex: 1, // input chiếm hết phần còn lại
-                    minWidth: 450, // không nhỏ hơn 120px
+                    minWidth: 600, // tăng từ 500 lên 600
                     borderTopRightRadius: 0,
                     borderBottomRightRadius: 0,
                     borderRight: 'none',
@@ -32,7 +32,7 @@ const ButtonInputSearch = (props) => {
                 icon={<SearchOutlined />}    
                 bordered={bordered}
                 style={{
-                    minWidth: 40, // không nhỏ hơn 40px
+                    minWidth: 50, // giữ nguyên 50
                     backgroundColor: '#0a5d87',
                     color: '#fff',
                     borderTopLeftRadius: 0,

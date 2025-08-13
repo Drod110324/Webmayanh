@@ -22,13 +22,13 @@ const Homepage = () => {
           )
         })}
       </WrapperTypeProduct>
-      <div style={{backgroundColor: '#e0e0e0', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)'}}>
+      <div style={{backgroundColor: '#F2F2F2', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)'}}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <SliderComponent arrImage={[Slider1, Slider2, Slider4, Slider5]}/>
         </div>
       </div>
-        <div style={{marginTop: '20px', display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap'}}>
-          <WrapperProduct style={{backgroundColor: '#e0e0e0'}}>
+        <div style={{marginTop: '5px', display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap'}}>
+          <WrapperProduct style={{backgroundColor: '#F2F2F2'}}>
           <CardComponent />
           <CardComponent />
           <CardComponent />
@@ -41,7 +41,7 @@ const Homepage = () => {
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px'}}>
         <WrapperButtonMore textButton='Xem Thêm' type='outline' styleButton={{
           border: '1px solid rgb(11, 116, 229)',
-           color: 'rgb(11, 116, 229)', 
+           color: 'rgb(11, 116, 229)',
            width: '240px',
            height: '38px',
            borderRadius: '4px',

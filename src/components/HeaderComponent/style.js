@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { Row } from "antd";
 
 export const WrapperHeader = styled.div`
-  width: 100%;
+  width: 1270px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 0px;
   gap: 16px;
   flex-wrap: nowrap;
 `;

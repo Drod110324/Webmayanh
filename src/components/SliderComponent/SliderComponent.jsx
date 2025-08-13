@@ -1,6 +1,8 @@
 import React from 'react'
 import Slider from "react-slick";
 import { Image } from 'antd';
+import { Link } from 'react-router-dom';
+import { WrapperSlider } from './style';
 
 const SliderComponent = ({arrImage}) => {
     var settings = {
@@ -18,16 +20,28 @@ const SliderComponent = ({arrImage}) => {
       display: 'flex', 
       justifyContent: 'center', 
       alignItems: 'center', 
-      width: '100%',
-      backgroundColor: '#fff'
+      width: '100%'
     }}>
-      <Slider style={{ width: '80%' }} {...settings}>
-          {arrImage.map((image) => {
+      <WrapperSlider style={{ width: '80%' }} {...settings}>
+          {arrImage.map((image, index) => {
               return (
-                  <Image src={image} alt="slider" preview={false} width='100%' height='100%' style={{ margin: '0 auto', display: 'block' }} />
+                  <div key={index}>
+                    <Image 
+                      src={image} 
+                      alt="slider" 
+                      preview={false} 
+                      style={{ 
+                        width: '100%', 
+                        height: '400px', 
+                        objectFit: 'cover',
+                        margin: '0 auto', 
+                        display: 'block' 
+                      }} 
+                    />
+                  </div>
               )
           })}
-      </Slider>
+      </WrapperSlider>
     </div>
   )
 }

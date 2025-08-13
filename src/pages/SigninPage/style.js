@@ -9,3 +9,9 @@ export const WrapperContainerLeft = styled.div`
 export const WrapperContainerRight = styled.div`
     width: 40%;
 `
+
+export const WrapperTextLight = styled.div`
+color: rgb(13, 92, 182);
+font-size: 14px;
+cursor: pointer;
+`
