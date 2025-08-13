@@ -1,5 +1,5 @@
 import React from 'react'
-import { WrapperContent, WrapperLabelText, WrapperTextValue } from './style'
+import { WrapperNavBar, WrapperContent, WrapperLabelText, WrapperTextValue } from './style'
 import { Checkbox } from 'antd'
 import { Rate } from 'antd'
 
@@ -12,7 +12,7 @@ const NavBarComponent = () => {
       case 'text':
         return options.map((option) => {
                 return (
-                <WrapperTextValue> {option}</WrapperTextValue>
+                <WrapperTextValue key={option}> {option}</WrapperTextValue>
                 ) 
         })
       case 'checkbox':
@@ -20,7 +20,7 @@ const NavBarComponent = () => {
             <Checkbox.Group style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '10px' }} onChange={onChange}>
                 {options.map((option) => {
                     return( 
-                        <Checkbox style={{marginleft: '0px'}} value={option.value}>{option.label}</Checkbox>
+                        <Checkbox style={{marginLeft: '0px'}} key={option.value} value={option.value}>{option.label}</Checkbox>
                     )
                 })}
             </Checkbox.Group>
@@ -30,7 +30,7 @@ const NavBarComponent = () => {
         return options.map((option) => {
           console.log('check', option)
             return (
-              <div style={{display: 'flex', gap: '4px'}}>
+              <div key={option} style={{display: 'flex', gap: '4px'}}>
                 <Rate style={{fontSize: '12px'}} disabled defaultValue={option} />
                 <span>{`Từ ${option} sao`}</span>
               </div>
@@ -39,7 +39,7 @@ const NavBarComponent = () => {
       case 'price':
         return options.map((option) => {
           return (
-            <WrapperTextPrice>
+            <WrapperTextPrice key={option}>
               {option}
             </WrapperTextPrice>
           )}
@@ -49,7 +49,7 @@ const NavBarComponent = () => {
     }
   }
   return (
-    <div>
+    <WrapperNavBar>
       <WrapperLabelText>
         labelText
       </WrapperLabelText>
@@ -57,7 +57,7 @@ const NavBarComponent = () => {
         {renderContent('text', ['Camera', 'Lens', 'Phu Kien', 'Gimbal'])}
         </WrapperContent>
       
-    </div>
+    </WrapperNavBar>
   )
 }
 
