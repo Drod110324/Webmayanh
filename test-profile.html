@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Profile Page</title>
+</head>
+<body>
+    <h1>Test Profile Page</h1>
+    
+    <h2>Current localStorage:</h2>
+    <pre id="localStorage"></pre>
+    
+    <h2>Test API:</h2>
+    <button onclick="testAPI()">Test API</button>
+    <pre id="apiResult"></pre>
+    
+    <script>
+        // Hiển thị localStorage
+        function showLocalStorage() {
+            const userInfo = localStorage.getItem('userInfo');
+            const isLogin = localStorage.getItem('isLogin');
+            const userRole = localStorage.getItem('userRole');
+            
+            document.getElementById('localStorage').textContent = JSON.stringify({
+                userInfo: userInfo ? JSON.parse(userInfo) : null,
+                isLogin,
+                userRole
+            }, null, 2);
+        }
+        
+        // Test API
+        async function testAPI() {
+            try {
+                const res = await fetch('http://localhost:5000/api/taikhoan');
+                if (res.ok) {
+                    const accounts = await res.json();
+                    document.getElementById('apiResult').textContent = JSON.stringify(accounts, null, 2);
+                } else {
+                    document.getElementById('apiResult').textContent = 'API failed: ' + res.status;
+                }
+            } catch (error) {
+                document.getElementById('apiResult').textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        // Hiển thị localStorage khi load
+        showLocalStorage();
+        
+        // Lắng nghe thay đổi localStorage
+        window.addEventListener('storage', showLocalStorage);
+    </script>
+</body>
+</html>

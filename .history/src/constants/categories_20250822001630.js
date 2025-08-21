@@ -1,0 +1,1 @@
+export const PRODUCT_CATEGORIES = [  'Máy ảnh',  'Ống kính',  'Phụ kiện',  'Gimbal']

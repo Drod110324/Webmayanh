@@ -1,0 +1,1 @@
+export const PRODUCT_CATEGORIES = [  'Máy ảnh DSLR',  'Máy ảnh Mirrorless',  'Ống kính',  'Máy ảnh Compact',  'Máy ảnh Action',  'Phụ kiện',  'Đèn Flash',  'Tripod']

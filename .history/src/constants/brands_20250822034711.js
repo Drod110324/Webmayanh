@@ -1,0 +1,1 @@
+export const PRODUCT_BRANDS = [  'Canon',  'Nikon',   'Sony',  'DJI',  'Fujifilm',  'Panasonic',  'Leica',  'Olympus',  'Pentax',  'Sigma',  'Tamron',  'Tokina',  'Zeiss',  'GoPro',  'Insta360']

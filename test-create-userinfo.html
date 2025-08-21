@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Create UserInfo</title>
+</head>
+<body>
+    <h1>Create Test UserInfo</h1>
+    <button onclick="createTestUser()">Create Test User</button>
+    <button onclick="showUserInfo()">Show Current UserInfo</button>
+    <button onclick="clearUserInfo()">Clear UserInfo</button>
+    
+    <pre id="output"></pre>
+    
+    <script>
+        function createTestUser() {
+            const testUser = {
+                _id: '68a0904b6db1a0d3423a4dc4',
+                username: 'testuser',
+                email: 'test@gmail.com',
+                hoTen: 'Test User',
+                soDienThoai: '0123456789',
+                diaChi: '123 Test Street',
+                vaiTro: 'user'
+            };
+            
+            localStorage.setItem('userInfo', JSON.stringify(testUser));
+            localStorage.setItem('isLogin', 'true');
+            localStorage.setItem('userRole', 'user');
+            
+            document.getElementById('output').textContent = 'Test user created!\n' + JSON.stringify(testUser, null, 2);
+        }
+        
+        function showUserInfo() {
+            const userInfo = localStorage.getItem('userInfo');
+            const isLogin = localStorage.getItem('isLogin');
+            const userRole = localStorage.getItem('userRole');
+            
+            document.getElementById('output').textContent = 
+                'isLogin: ' + isLogin + '\n' +
+                'userRole: ' + userRole + '\n' +
+                'userInfo: ' + userInfo;
+        }
+        
+        function clearUserInfo() {
+            localStorage.removeItem('userInfo');
+            localStorage.removeItem('isLogin');
+            localStorage.removeItem('userRole');
+            document.getElementById('output').textContent = 'Cleared!';
+        }
+        
+        // Auto show on load
+        showUserInfo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Đăng ký/Đăng nhập</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test API Đăng ký/Đăng nhập</h1>
+        
+        <h2>📝 Đăng ký tài khoản mới</h2>
+        <div class="form-group">
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" placeholder="test@example.com">
+        </div>
+        <div class="form-group">
+            <label for="signup-password">Mật khẩu:</label>
+            <input type="password" id="signup-password" placeholder="123456">
+        </div>
+        <button onclick="testSignup()">🚀 Đăng ký</button>
+        
+        <h2>🔐 Đăng nhập</h2>
+        <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" placeholder="test@example.com">
+        </div>
+        <div class="form-group">
+            <label for="login-password">Mật khẩu:</label>
+            <input type="password" id="login-password" placeholder="123456">
+        </div>
+        <button onclick="testLogin()">🔑 Đăng nhập</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5001';
+        
+        function showResult(message, isSuccess = true) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${isSuccess ? 'success' : 'error'}`;
+            resultDiv.innerHTML = `<strong>${isSuccess ? '✅' : '❌'}</strong> ${message}`;
+        }
+        
+        async function testSignup() {
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            
+            if (!email || !password) {
+                showResult('Vui lòng nhập đầy đủ email và mật khẩu!', false);
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/test-signup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(`Đăng ký thành công! Tài khoản: ${result.user.email} (${result.user.hoTen})`);
+                    // Tự động điền thông tin đăng nhập
+                    document.getElementById('login-email').value = email;
+                    document.getElementById('login-password').value = password;
+                } else {
+                    showResult(`Đăng ký thất bại: ${result.message}`, false);
+                }
+            } catch (error) {
+                showResult(`Lỗi kết nối: ${error.message}`, false);
+            }
+        }
+        
+        async function testLogin() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (!email || !password) {
+                showResult('Vui lòng nhập đầy đủ email và mật khẩu!', false);
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/test-login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(`Đăng nhập thành công! Chào mừng ${result.user.hoTen} (${result.user.email})`);
+                } else {
+                    showResult(`Đăng nhập thất bại: ${result.message}`, false);
+                }
+            } catch (error) {
+                showResult(`Lỗi kết nối: ${error.message}`, false);
+            }
+        }
+    </script>
+</body>
+</html>
