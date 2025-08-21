@@ -5,10 +5,11 @@ import { StyleNameProduct, WrapperCardStyle, WrapperPrice, WrapperReportText, Wr
 import { StarFilled, ShoppingCartOutlined } from '@ant-design/icons'
 import { useCart } from '../../context/useCart'
 const CardComponent = ({ product }) => {
-  const { _id, id, name, image, price, rating, sold, discount } = product || {}
-  const { addToCart } = useCart()
+  const { _id, id, name, image, images, price, rating, sold, discount } = product || {}
+  const { addToCart, isInCart, cartItems } = useCart()
   const productId = _id || id
   const [showGreenEffect, setShowGreenEffect] = useState(false)
+  const isProductInCart = isInCart(productId)
   const displayImage = image ? (image.startsWith('http') ? image : `http://localhost:5000/${image}`) : ''
   const formatPrice = (price) => {
     return new Intl.NumberFormat('vi-VN', {
